@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beatmaker</title>
+    <link rel="stylesheet" href="./beatmaker.css">
+</head>
+
+<body>
+    <div class="sequencer">
+        <!-- ik block(div) bnayenge kick track and iss block ke andar 2 block honge:
+    1. control block
+    2. kick sound interface block
+    -->
+        <div class="kick-track">
+            <!-- 1.control block of kick track-->
+            <div class="control">
+                <!-- heading -->
+                <h1>KICK</h1>
+                <!-- button  -->
+                <button data-track="0" class="mute kick-volume ">
+                    <i class="fas fa-volume-mute"></i>
+                </button>
+                <!-- selection -->
+                <select name="kick-select" id="kick-select">
+                    <option calss="opt" value="./sounds/kick-classic.wav">CLASSIC KICK</option>
+                    <option value="./sounds/kick-808.wav">808 KICK</option>
+                    <option value="./sounds/kick-heavy.wav">HEAVY KICK</option>
+                    <option value="./sounds/kick-softy.wav">SOFTY KICK</option>
+                </select>
+                <!-- 2. kick sound interface block -->
+            </div>
+            <!-- kick sounds interface -->
+            <div class="kick">
+                <div class="pad kick-pad b0"></div>
+                <div class="pad kick-pad b1"></div>
+                <div class="pad kick-pad b2"></div>
+                <div class="pad kick-pad b3"></div>
+                <div class="pad kick-pad b4"></div>
+                <div class="pad kick-pad b5"></div>
+                <div class="pad kick-pad b6"></div>
+                <div class="pad kick-pad b7"></div>
+            </div>
+            <!-- end of kick-track -->
+        </div>
+
+        <!-- ik hor block(div) bnayenge snare-track and iss block ke andar bhi 2 block honge:
+    1. control block
+    2. snare sound interface block
+    -->
+        <div class="snare-track">
+            <!-- 1.control block of snare track-->
+            <div class="control">
+                <!-- heading -->
+                <h1>SNARE</h1>
+                <!-- button  -->
+                <button data-track="1" class="mute snare-volume">
+                    <i class="fas fa-volume-mute"></i>
+                </button>
+                <!-- selection -->
+                <select name="snare-select" id="snare-select">
+                    <option value="./sounds/snare-acoustic01.wav">ACOUSTIC01 SNARE</option>
+                    <option value="./sounds/snare-808.wav">808 SNARE</option>
+                    <option value="./sounds/snare-vinyl02.wav">VINYL02 SANRE</option>
+                </select>
+                <!-- 2. snare sound interface block -->
+            </div>
+            <!-- snare sounds interface -->
+            <div class="kick">
+                <div class="pad snare-pad b0"></div>
+                <div class="pad snare-pad b1"></div>
+                <div class="pad snare-pad b2"></div>
+                <div class="pad snare-pad b3"></div>
+                <div class="pad snare-pad b4"></div>
+                <div class="pad snare-pad b5"></div>
+                <div class="pad snare-pad b6"></div>
+                <div class="pad snare-pad b7"></div>
+            </div>
+            <!-- end of snare-track -->
+        </div>
+
+
+        <!-- ik hor block(div) bnayenge hihat-track and iss block ke andar bhi 2 block honge:
+    1. control block
+    2. hihat sound interface block
+    -->
+        <div class="snare-track">
+            <!-- 1.control block of hihat track-->
+            <div class="control">
+                <!-- heading -->
+                <h1>HITHAT</h1>
+                <!-- button  -->
+                <button data-track="2" class="mute hihat-volume">
+                    <i class="fas fa-volume-mute"></i>
+                </button>
+                <!-- selection -->
+                <select name="hihat-select" id="hihat-select">
+                    <option value="./sounds/hihat-acoustic01.wav">ACOUSTIC01 HIHAT</option>
+                    <option value="./sounds/hihat-808.wav">808 HIHAT</option>
+                    <option value="./sounds/lover-Taylor-Swift.mp3">lover</option>
+                </select>
+                <!-- 2. hihat sound interface block -->
+            </div>
+            <!-- hihat sounds interface -->
+            <div class="kick">
+                <div class="pad hihat-pad b0"></div>
+                <div class="pad hihat-pad b1"></div>
+                <div class="pad hihat-pad b2"></div>
+                <div class="pad hihat-pad b3"></div>
+                <div class="pad hihat-pad b4"></div>
+                <div class="pad hihat-pad b5"></div>
+                <div class="pad hihat-pad b6"></div>
+                <div class="pad hihat-pad b7"></div>
+            </div>
+            <!-- end of hihat-track -->
+        </div>
+        <!-- play-stop button -->
+        <div class="play-stopButton">
+            <button class="play">PLAY</button>
+        </div>
+
+        <!-- tempo control -->
+        <div class="tempo">
+            <input type="range" class="tempo-slider" max="300" min="10" value="150">
+            <p>Tempo: <span class="tempo-nr">150</span></p>
+            <!-- end of tempo block -->
+        </div>
+ <!-- end of sequencer (the main block); -->
+    </div>
+    <audio class="kick-sound" src="./sounds/kick-heavy.wav"></audio>
+    <audio class="snare-sound" src="./sounds/snare-vinyl02.wav"></audio>
+    <audio class="hihat-sound" src="./sounds/hihat-acoustic01.wav"></audio>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+        integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./beatmaker.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,232 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.sequencer {
+    background-color: rgb(229, 229, 203);
+    border: 2px solid rgb(10, 9, 9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    max-width: 100%;
+
+}
+
+/* main blocks of kick,snare ,hithat track */
+.kick-track {
+    /* border: 2px solid red; */
+    margin: 3rem 1.5rem;
+    padding: 0.5rem;
+    display: flex;
+    gap: 10rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.snare-track,
+.hihat-track {
+    /* border: 2px solid red; */
+    margin: 3rem 1.5rem;
+    padding: 0.5rem;
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+/* control block of all tracks */
+.control {
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    /* flex: 1; */
+}
+
+i,
+svg {
+    pointer-events: none;
+}
+
+.control button {
+    border: none;
+    /* border-radius: 50%; */
+    padding: 1rem;
+    font-size: 1rem;
+    color: black;
+    box-shadow: 0px 0px 5px black;
+}
+
+.mute {
+    background-color: rgb(247, 87, 28);
+}
+
+.mute.activemute {
+    background-color: rgb(231, 199, 188);
+}
+
+.control select {
+    border-radius: 0.3rem;
+    outline: none;
+    padding: 0.5rem;
+    font-size: 1.3rem;
+    background-color: rgb(233, 136, 136);
+    color: black;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px black;
+    /* border:2px solid red; */
+}
+
+
+
+
+/* tracks interface */
+/* main block of all track interface */
+.kick,
+.snare,
+.hihat {
+    /* border: 2px solid blue; */
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 1.15rem;
+}
+
+.pad {
+    box-shadow: 0px 0px 4px black;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 1rem;
+}
+
+.kick-pad {
+    background-color: rgb(250, 174, 232);
+
+}
+
+.snare-pad {
+    background-color: rgb(247, 225, 189);
+}
+
+.hihat-pad {
+    background-color: rgb(199, 237, 252);
+}
+
+/* active color */
+.kick-pad.active {
+    background-color: rgb(237, 78, 200);
+
+}
+
+.snare-pad.active {
+    background-color: rgb(223, 167, 77);
+}
+
+.hihat-pad.active {
+    background-color: rgb(72, 168, 206);
+}
+
+.play-stopButton button {
+    border: 1px solid black;
+    border-radius: 0.4rem;
+    padding: 0.8rem;
+    margin: 2rem;
+    font-size: 2rem;
+    color: black;
+    background-color: rgb(247, 87, 28);
+    box-shadow: 2px 2px 5px black;
+}
+
+.tempo {
+    /* border: 2px solid red; */
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    min-width: 30%;
+    text-align: center;
+
+}
+
+.tempo-slider {
+    appearance: none;
+    outline: none;
+    color: black;
+    background-color: rgb(233, 136, 136);
+    border: 2px solid black;
+    padding: 0.2rem;
+    border-radius: 1rem;
+    width: 100%;
+}
+
+@keyframes wave {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+
+@media screen and (max-width:1024px) {
+
+    .kick,
+    .snare,
+    .hihat {
+
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+}
+
+@media screen and (max-width:768px) {
+    .control {
+        display: grid;
+        grid-template-columns: (2, 1fr);
+    }
+}
+
+@media screen and (max-width:590px) {
+
+    .kick,
+    .snare,
+    .hihat {
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .kick-track {
+        gap: 1rem
+    }
+
+    .control {
+        display: grid;
+        grid-template-columns: (2, 1fr);
+    }
+
+    .snare-track,
+    .hihat-track {
+        gap: 1rem
+    }
+    .pad{
+        height:3rem;
+        width:3rem;
+    }
+    .control select {
+        font-size: 0.7rem;
+        padding: 0.3rem;
+    }
+
+}
